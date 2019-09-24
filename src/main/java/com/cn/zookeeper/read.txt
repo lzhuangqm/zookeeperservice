@@ -1,0 +1,7 @@
+这里使用的是curator，curator是对zookeeper的简单封装，提供了一些集成的方法，或者是提供了更优雅的api
+
+在连接zookeeper时，会抛出如下错误：
+Exception in thread "main" org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
+需要加大connectionTimeoutMs和sessionTimeoutMs的数值，且sessionTimeoutMs的值必须大于connectionTimeoutMs值。
+zookeeper.sessionTimeoutMs: 50000
+zookeeper.connectionTimeoutMs: 30000

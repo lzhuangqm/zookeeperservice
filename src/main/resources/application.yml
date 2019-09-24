@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: dev
+
+#开发：dev
+#预测试：uattest
+#测试：test
+#地推：dt
+#预发布：uat
+#正试：prod
