@@ -4,6 +4,9 @@ package com.cn.zookeeper.session;
  * zookeeper操作类
  * spring bean的初始化执行顺序：构造方法 --> @PostConstruct注解的方法 --> afterPropertiesSet方法 --> init-method指定的方法。
  * afterPropertiesSet通过接口实现方式调用（效率上高一点），@PostConstruct和init-method都是通过反射机制调用
+ * @CountDownLatch是一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待。
+ * @await(); // 使当前线程在锁存器倒计数至零之前一直等待
+ * @countDown(); // 递减锁存器的计数，如果计数到达零，则释放所有等待的线程
  */
 import org.apache.curator.framework.*;
 import org.apache.curator.framework.recipes.cache.*;

@@ -61,7 +61,7 @@ public class ZkClient {
                     .sessionTimeoutMs( Integer.parseInt(zconfig.getSessionTimeoutMs()))
                     .connectionTimeoutMs(Integer.parseInt(zconfig.getConnectionTimeoutMs()))
                     .namespace(zconfig.getNamespace());
-            if(StringUtils.isNotEmpty(zconfig.getDigest())) {
+            if(StringUtils.isNotEmpty(zconfig.getDigest())) {  // 添加验证信息：客户端获取或删除信息时也要添加相应的验证。
                 builder.authorization("digest", zconfig.getDigest().getBytes("UTF-8"));
                 builder.aclProvider(new ACLProvider() {
                     @Override
